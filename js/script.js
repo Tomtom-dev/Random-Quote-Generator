@@ -37,7 +37,7 @@ var quotes =[
  
 // Hereby the function to get a random quote
 
-console.log(quotes)
+
 
         function getRandomQuote(){
     var RandomNum= Math.floor(Math.random()*(quotes.length));
@@ -46,7 +46,7 @@ console.log(quotes)
     
 // Below the function to write the proprieties of the quote selected randomly 
 
-console.log(getRandomQuote());
+
 
 
     function printQuote (){
@@ -81,7 +81,7 @@ function random_bg_color() {
     var y = Math.floor(Math.random() * 256);
     var z = Math.floor(Math.random() * 256);
     var bgColor = "rgb(" + x + "," + y + "," + z + ")";
- console.log(bgColor);
+ 
   
     document.body.style.background = bgColor;
     document.getElementById('loadQuote').onclick = bgColor;
