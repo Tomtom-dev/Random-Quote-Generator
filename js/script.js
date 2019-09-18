@@ -1,4 +1,4 @@
-// You can find below an array of quotes with 3 information:  quote sources and year.
+// You can find below an array of quotes with 4 information:  quote, sources, year and citation if possible.
 
 var quotes =[
     {
@@ -13,12 +13,14 @@ var quotes =[
     },
     {
     quote: 'There is only one way to learn, it’s throught action .',
-    source: 'The alchemist,Paolo Coelho',
+    source: 'Paolo Coelho',
+    citation: 'The alchemist',
     year: 1988
     },
     {
     quote: 'We only see clearly with the heart. The essential is invisible to the eyes. ',
-    source: 'Le petit Prince, Antoine de Saint-Exupery',
+    source: 'Antoine de Saint-Exupery',
+    citation: 'Le petit prince',
     year:1943
     },
     {
@@ -65,12 +67,39 @@ console.log(getRandomQuote());
         }
         message+= '</p>'
 
-console.log(message)
+
 document.getElementById('quote-box').innerHTML=message;
 
 return message;
     }
 
-// the button to click for load a random quote
+
+// extra credit generate a random color in the background
+
+function random_bg_color() {
+    var x = Math.floor(Math.random() * 256);
+    var y = Math.floor(Math.random() * 256);
+    var z = Math.floor(Math.random() * 256);
+    var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+ console.log(bgColor);
+  
+    document.body.style.background = bgColor;
+    document.getElementById('loadQuote').onclick = bgColor;
+    }
+
+    random_bg_color();
+
+
+// extra credit auto refresh the quote and color background every 4 second 
+
+setInterval(printQuote,4000);
+setInterval(random_bg_color,4000);
+
+
+/** click the button it for load a random quote 
+    click the button it load a random color
+  **/
+
 
     document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+    document.getElementById('loadQuote').addEventListener('click', random_bg_color, false);
